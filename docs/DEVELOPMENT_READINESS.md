@@ -5,10 +5,11 @@
 ## 1. Go / No-Go 结论
 
 ```text
-阶段 A：GO
+阶段 A：已完成
+阶段 B：等待用户明确开始
 ```
 
-当前已经具备创建 Codex++ Fork、克隆到 Windows、运行原版基线测试和 Windows Release 构建的条件。
+Codex++ Fork、Windows 克隆、原版基线测试和 Windows Release 构建均已完成，详细结果见 `docs/BASELINE_BUILD_REPORT.md`。
 
 真实移动盘、真实 U 盘版 Codex 和两套业务服务器分别属于后续阶段，不阻塞阶段 A。
 
@@ -39,7 +40,7 @@
 | UI 预览 | 通过 | `http://127.0.0.1:8787/` 返回 200 |
 | 上游审计源码 | 通过 | 四个仓库已固定 commit |
 
-当前工作树包含尚未提交的需求、文档和原型变更。阶段 A 第一个 Git 动作必须先审查并提交当前开发基线，不能带着不明确的 dirty tree 开始大规模源码迁移。
+私有规划仓库基线已提交并推送。阶段 A 新增的构建报告将在阶段 A 收尾提交中一并推送。
 
 ## 4. Windows 开发端
 
@@ -49,7 +50,7 @@
 | 主机 | 通过 | `LAPTOP-892MM2QA` |
 | 用户 | 通过 | `James` |
 | 系统 | 通过 | Windows 11 x64，Build 22621.4317 |
-| 开发目录 | 通过 | `D:\Dev\codex-portable` 已存在且为空 |
+| 开发目录 | 通过 | `D:\Dev\codex-portable` 已克隆公开 Fork |
 | D 盘空间 | 通过 | 约 396.3GB 可用 |
 | Rust | 通过 | rustc/cargo 1.97.0 stable-msvc |
 | Node/npm | 通过 | Node 24.18.0，npm 11.16.0 |
@@ -58,7 +59,7 @@
 | Windows SDK | 通过 | 10.0.22621、10.0.26100 |
 | WebView2 | 通过 | Runtime 150.0.4078.65 |
 | Git/打包工具 | 通过 | Git、7-Zip、Inno Setup、MSBuild |
-| GitHub CLI 登录 | 待执行 | Windows 未登录；阶段 A 可先由 Mac 创建仓库 |
+| GitHub CLI 登录 | 不要求 | 仓库和 Fork 由 Mac 已登录会话创建 |
 | Docker | 不需要 | 当前客户端阶段不使用 |
 | CMake | 按需 | 只有实际构建报缺失时再安装 |
 
@@ -96,21 +97,23 @@ Windows 当前存在多个安装版 Codex 进程。
 
 ```text
 JJames646/codex-portable
+JJames646/codex-portable-workstation
 ```
 
 尚未创建：
 
 ```text
-JJames646/codex-portable-workstation
 JJames646/codex-workstation-releases
 ```
 
-阶段 A：
+阶段 A 已完成：
 
-1. 从 Codex++ 创建公开 Fork。
-2. 建立 `origin` 和 `upstream`。
-3. 迁移当前文档和 UI 原型。
-4. Windows 克隆到 `D:\Dev\codex-portable`。
+1. 已从 Codex++ 创建公开 Fork。
+2. 已建立 `origin` 和只拉取的 `upstream`。
+3. 已迁移公开技术文档和脱敏 UI 原型。
+4. 已在 Windows 克隆到 `D:\Dev\codex-portable`。
+5. 已固定 `v1.2.37` / `2924333c6770497470090235f484519154698651`。
+6. 已通过测试和 Release 构建。
 
 服务器私有仓库在 RC3 前不创建。
 
@@ -134,23 +137,23 @@ JJames646/codex-workstation-releases
 - 用户提供两套服务器。
 - 接入中转站、卡密、网络服务和管理员后台。
 
-## 8. 阶段 A 执行清单
+## 8. 阶段 A 执行结果
 
 ```text
-1. 审查并提交当前规划仓库基线
-2. 创建公开 Codex++ Fork
-3. 配置 origin/upstream
-4. 迁移产品文档和 UI 原型
-5. 克隆到 D:\Dev\codex-portable
-6. 记录 v1.2.37 / 2924333c6770497470090235f484519154698651
-7. npm ci
-8. npm run check
-9. npm test
-10. npm run vite:build
-11. cargo fmt --all -- --check
-12. cargo test --workspace
-13. npm run build
-14. 输出 docs/BASELINE_BUILD_REPORT.md
+[完成] 审查、提交并推送规划仓库基线
+[完成] 创建公开 Codex++ Fork
+[完成] 配置 origin/upstream
+[完成] 迁移公开技术文档和脱敏 UI 原型
+[完成] 克隆到 D:\Dev\codex-portable
+[完成] 固定 v1.2.37 / 2924333c6770497470090235f484519154698651
+[完成] npm ci
+[完成] npm run check
+[完成] npm test
+[完成] npm run vite:build
+[完成] cargo fmt --all -- --check
+[完成] cargo test --workspace
+[完成] npm run build
+[完成] 输出 docs/BASELINE_BUILD_REPORT.md
 ```
 
 ## 9. 阶段 A 完成标准
@@ -162,13 +165,12 @@ JJames646/codex-workstation-releases
 - 没有开始服务器开发。
 - 没有把测试运行时宣传为真实 Codex。
 
-## 10. 当前唯一需要的执行授权
+## 10. 下一阶段授权边界
 
-准备工作已经完成。用户明确发送：
+阶段 A 收尾提交和推送完成后，不自动进入功能编码。用户明确发送：
 
 ```text
-开始阶段 A
+开始阶段 B
 ```
 
-即可执行创建 Fork、提交基线、Windows 克隆和首次基线构建。
-
+才开始把当前静态 UI 迁移到 Codex++ Manager，并建立两个业务服务器的 `NotConnected` Adapter。
