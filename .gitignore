@@ -1,0 +1,19 @@
+.DS_Store
+
+# 上游源码只用于本地审计与兼容开发，不作为本仓库源码提交。
+third_party/upstreams/
+worktrees/
+
+# 本地构建与临时产物
+artifacts/
+dist/
+release/
+tmp/
+*.log
+
+# 凭据与本地配置
+.env
+.env.*
+!.env.example
+secrets/
+credentials/
