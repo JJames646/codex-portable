@@ -6,10 +6,11 @@
 
 ```text
 阶段 A：已完成
-阶段 B：等待用户明确开始
+阶段 B：已完成
+阶段 C：等待用户明确开始
 ```
 
-Codex++ Fork、Windows 克隆、原版基线测试和 Windows Release 构建均已完成，详细结果见 `docs/BASELINE_BUILD_REPORT.md`。
+Codex++ Fork、Windows 原版基线、工作站 UI 集成、本地概览聚合和 Windows Release 构建均已完成，详细结果见 `docs/BASELINE_BUILD_REPORT.md` 与 `docs/PHASE_B_IMPLEMENTATION_REPORT.md`。
 
 真实移动盘、真实 U 盘版 Codex 和两套业务服务器分别属于后续阶段，不阻塞阶段 A。
 
@@ -167,10 +168,10 @@ JJames646/codex-workstation-releases
 
 ## 10. 下一阶段授权边界
 
-阶段 A 收尾提交和推送完成后，不自动进入功能编码。用户明确发送：
+阶段 B 收尾提交和推送完成后，不自动进入便携路径开发。用户明确发送：
 
 ```text
-开始阶段 B
+开始阶段 C
 ```
 
-才开始把当前静态 UI 迁移到 Codex++ Manager，并建立两个业务服务器的 `NotConnected` Adapter。
+才开始从当前 EXE 推导移动盘根目录、实现 `CODEXPP_HOME`，并将 Codex++ 工作站状态迁入移动盘 `Data/`。
