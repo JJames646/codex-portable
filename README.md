@@ -1,61 +1,76 @@
-# Codex 便携工作站
+<div align="center">
 
-这是一个面向 Windows 10/11 x64 的 U 盘/移动固态便携 AI 编程工作站项目。
+# 云枢 AI 便携工作站
 
-项目不会重新开发 Codex 桌面界面。正式产品计划基于 Codex++ 做受控二次开发，复用其供应商配置、协议转换、会话管理、插件市场、页面增强、Zed Remote 和 Codex 启动能力，再补充 U 盘路径、跨电脑数据、服务器授权、应用级连接、统一更新、安全退出与恢复机制。
+**把编程、对话、图片创作和工作资料，放进一个可以随身带走的工作环境。**
 
-> 当前阶段：上游审计、架构设计和 UI 原型。尚未生成可在 Windows 上运行的正式 EXE。
+Windows x64 · Codex / Claude Code / OpenClaw · v1.2.1
 
-## 当前已有内容
+[**下载安装包**](https://github.com/JJames646/codex-portable/releases/download/v1.2.1/Yunshu-AI-Workstation-1.2.1-Windows-x64.zip) · [**观看宣传视频**](https://github.com/JJames646/codex-portable/releases/download/v1.2.1/Yunshu-AI-Workstation-Demo.mp4) · [**查看对应源码**](https://github.com/JJames646/codex-portable-workstation/tree/yunshu-v1.2.1)
 
-- `prototype/codex-launcher-ui/`：可在浏览器中查看的产品 UI 原型。
-- `third_party/upstreams/`：本地浅克隆的上游源码，仅用于审计，不提交到本仓库。
-- `PROJECT_SPEC.md`：整理后的完整产品需求。
-- `docs/UPSTREAM_AUDIT.md`：Codex++、Sub2API、便携 Codex 和 OpenAI Codex 源码审计。
-- `docs/FEATURE_INTEGRATION_MATRIX.md`：每个 UI 页面和按钮应对接的真实功能。
-- `docs/ARCHITECTURE.md`：正式软件总体架构。
-- `docs/ENGINEERING_DIRECTORY.md`：正式工程目录设计。
-- `docs/CODEXPLUSPLUS_INTEGRATION.md`：Codex++ Fork 和改造边界。
-- `docs/SUB2API_INTEGRATION.md`：服务器、仪表盘和设备授权对接方案。
-- `docs/NETWORK_AND_SERVER_CONNECTIVITY.md`：仅服务于本工作站的合规连接方案。
-- `docs/UPDATE_PROTOCOL.md`：自己的更新仓库、签名、兼容矩阵和回滚协议。
-- `docs/SECURITY_MODEL.md`：凭据、日志、WebView、更新和服务端安全模型。
-- `docs/LICENSE_REVIEW.md`：AGPL、LGPL、第三方载荷和商标风险。
-- `docs/DELIVERY_PLAN.md`：分阶段开发计划。
-- `docs/DEVELOPMENT_READINESS.md`：Mac、GitHub 和 Windows 的最终开发前预检与 Go/No-Go 结论。
-- `docs/PRODUCT_DECISIONS.md`：用户已确认的产品、授权、卡密、数据和更新决策。
-- `docs/plans/2026-07-16-local-networked-usb-launcher-development-plan.md`：先完成可在 U 盘运行、正常联网但暂不连接两套业务服务器的启动器，再接服务器的执行方案。
+![云枢 AI 便携工作站真实界面](docs/images/overview.jpg)
 
-## 查看 UI 原型
+</div>
 
-在当前目录运行：
+> **现成软件需要卡密激活。加入 QQ 群 `713993476`，可免费申请工作站卡密。**
+>
+> 也可以在闲鱼搜索 **“云枢 AI”** 咨询。工作站卡密与模型 API Key 不同；模型服务需要自行配置，费用与额度按相应服务商规则计算。
 
-```bash
-cd prototype/codex-launcher-ui
-python3 -m http.server 8787
-```
+## 下载与使用
 
-浏览器打开：
+| 你需要什么 | 入口 |
+| --- | --- |
+| Windows 一键安装包 v1.2.1 | [下载 ZIP，解压后运行 EXE](https://github.com/JJames646/codex-portable/releases/download/v1.2.1/Yunshu-AI-Workstation-1.2.1-Windows-x64.zip) |
+| 发布说明与校验文件 | [打开 v1.2.1 Release](https://github.com/JJames646/codex-portable/releases/tag/v1.2.1) |
+| 工作站及安装器源码 | [浏览源码](https://github.com/JJames646/codex-portable-workstation/tree/yunshu-v1.2.1) · [下载源码包](https://github.com/JJames646/codex-portable/releases/download/v1.2.1/Yunshu-AI-Workstation-1.2.1-Source.zip) |
+| 宣传视频 | [观看 / 下载 MP4](https://github.com/JJames646/codex-portable/releases/download/v1.2.1/Yunshu-AI-Workstation-Demo.mp4) |
+| 免费申请卡密、使用交流 | **QQ 群：713993476** |
 
-```text
-http://127.0.0.1:8787/
-```
+1. 下载并解压安装包，运行 `云枢AI便携工作站一键安装包-1.2.1.exe`。
+2. 选择本机、U 盘或移动固态上的可写目录，按安装向导完成安装。
+3. 首次启动等待初始化，使用在 QQ 群免费申请的工作站卡密激活。
+4. 按需配置模型服务和 API Key，再进入 Codex、Claude Code、OpenClaw、AI 对话或 AI 生图。
 
-## 已确定的核心路线
+面向 Windows 10/11 x64，建议使用移动固态。模型调用需要网络；第三方引擎可能还有各自的登录和系统要求。本仓库不提供 macOS、Linux 或 Windows ARM 的成品安装包。
 
-1. 正式客户端优先从 Codex++ Fork 演进，继续使用 Rust + Tauri + React。
-2. 启动器从自身 EXE 路径推导移动盘根目录，不写死盘符。
-3. `CODEX_HOME`、`CODEX_SQLITE_HOME`、Codex++ 状态、项目、插件和恢复点尽量全部落在移动存储中。
-4. 客户端不直接从社区仓库执行 `git pull`，只检查自己的签名稳定更新清单。
-5. Sub2API 独立部署在服务器；无账号卡密激活、移动工作站绑定和服务 entitlement 由独立 `activation-bridge` 补齐。
-6. 所谓“网络环境”仅允许实现为本工作站专用、目标域名白名单化的服务连接，不提供通用 VPN 或任意流量转发。
+## 一个工作站，多个工作入口
 
-## 当前最重要的发布约束
+| 工作内容 | 已有能力 |
+| --- | --- |
+| AI 编程与自动化 | 集中配置并启动 Codex、Claude Code、OpenClaw |
+| AI 对话与图片创作 | 本地会话、独立模型服务配置、图片生成与结果管理 |
+| Skills 与插件 | 浏览资源、安装管理、切换目标引擎 |
+| 随身工作资料 | 项目、配置和可迁移数据随移动存储保存 |
+| 使用与维护 | 中文教程、工作站设置、安装向导 |
 
-- Codex++ 是 `AGPL-3.0-only`。用户已接受对应源码义务；每个客户端发行版必须关联准确源码和构建说明。
-- 用户已接受向接收者提供 Codex++ 对应修改源码，正式客户端可以继续采用 Codex++ Fork；每个发行版必须提供完全对应的源码、构建说明、许可证和第三方声明。
-- 便携 Codex 上游仓库未声明清晰的仓库级许可证，桌面应用载荷的再分发权必须单独确认。
-- Sub2API 使用 LGPL，但 README 同时写有“无商业授权”和上游服务条款风险，商业上线前必须进行独立法律与上游条款评估。
-- “从同一 U 盘换电脑继续工作”可以覆盖项目、会话、Skills、插件和本地配置，但第三方 OAuth、系统钥匙串和官方云端状态不能承诺完全无感迁移。
+### AI 对话
 
-详细结论见 `docs/`。
+![AI 对话真实界面](docs/images/chat.jpg)
+
+### Skills 与插件
+
+| Skill 库 | 插件库 |
+| --- | --- |
+| ![Skill 库](docs/images/skills.jpg) | ![插件库](docs/images/plugins.jpg) |
+
+## 产品演示
+
+[![点击观看云枢 AI 工作站宣传视频](docs/images/demo-poster.jpg)](https://github.com/JJames646/codex-portable/releases/download/v1.2.1/Yunshu-AI-Workstation-Demo.mp4)
+
+约 71 秒，1080p MP4。截图和视频展示已有产品，具体界面、可用模型和第三方资源以安装版本及服务配置为准。
+
+## 版本与源码
+
+本次提供的安装包是 **2026 年 9 月 20 日构建的 v1.2.1**，工作站 Build ID 为 `9303dc9771b80694`。文件从现有安装包无损压缩，未修改 EXE、卡密机制或模型接入逻辑。
+
+- [版本核对与校验说明](docs/releases/v1.2.1.md)
+- [源码及构建说明](https://github.com/JJames646/codex-portable-workstation/blob/yunshu-v1.2.1/docs/BUILD_YUNSHU.md)
+- [开源范围与第三方说明](https://github.com/JJames646/codex-portable-workstation/blob/yunshu-v1.2.1/docs/OPEN_SOURCE.md)
+
+这个仓库提供**成品下载、宣传资料和使用入口**；[`codex-portable-workstation`](https://github.com/JJames646/codex-portable-workstation) 提供**对应源码**。早期架构及原型文档保留在历史记录和原目录中，可能不代表当前成品状态。
+
+## 反馈与联系
+
+使用交流和免费申请工作站卡密：**QQ 群 713993476**。问题反馈也可以提交 [Issue](https://github.com/JJames646/codex-portable/issues)，请注明版本、操作步骤和错误提示，不要提交卡密、API Key 或个人会话数据。
+
+云枢是独立项目。Codex、Claude Code、OpenClaw 及其他第三方名称和标识归相应权利人所有；本项目不代表相关厂商官方产品或背书。第三方软件与服务遵循各自条款。
