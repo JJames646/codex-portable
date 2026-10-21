@@ -1,76 +1,80 @@
 <div align="center">
 
-# 云枢 AI 便携工作站
+**English** | [简体中文](README.zh-CN.md)
 
-**把编程、对话、图片创作和工作资料，放进一个可以随身带走的工作环境。**
+# Yunshu AI Workstation · 云枢 AI 便携工作站
+
+**A portable workspace for coding, conversations, image creation and your project files.**
 
 Windows x64 · Codex / Claude Code / OpenClaw · v1.2.1
 
-[**下载安装包**](https://github.com/JJames646/codex-portable/releases/download/v1.2.1/Yunshu-AI-Workstation-1.2.1-Windows-x64.zip) · [**观看宣传视频**](https://github.com/JJames646/codex-portable/releases/download/v1.2.1/Yunshu-AI-Workstation-Demo.mp4) · [**查看对应源码**](https://github.com/JJames646/codex-portable-workstation/tree/yunshu-v1.2.1)
+[**Download / 下载**](https://github.com/JJames646/codex-portable/releases/download/v1.2.1/Yunshu-AI-Workstation-1.2.1-Windows-x64.zip) · [**Video / 视频**](https://github.com/JJames646/codex-portable/releases/download/v1.2.1/Yunshu-AI-Workstation-Demo.mp4) · [**Source / 源码**](https://github.com/JJames646/codex-portable-workstation)
 
-![云枢 AI 便携工作站真实界面](docs/images/overview.jpg)
+![Yunshu AI Workstation: the existing application interface in Simplified Chinese](docs/images/overview.jpg)
 
 </div>
 
-> **现成软件需要卡密激活。加入 QQ 群 `713993476`，可免费申请工作站卡密。**
+> **The ready-to-use software requires an activation code. Join QQ group `713993476` to request a free workstation activation code.**
 >
-> 也可以在闲鱼搜索 **“云枢 AI”** 咨询。工作站卡密与模型 API Key 不同；模型服务需要自行配置，费用与额度按相应服务商规则计算。
+> You can also search for **"云枢 AI"** on Xianyu (闲鱼) for inquiries. A workstation activation code is separate from a model API key. Configure your own model service; usage fees and quotas depend on your provider.
 
-## 下载与使用
+## Download and Get Started
 
-| 你需要什么 | 入口 |
+| What you need | Where to find it |
 | --- | --- |
-| Windows 一键安装包 v1.2.1 | [下载 ZIP，解压后运行 EXE](https://github.com/JJames646/codex-portable/releases/download/v1.2.1/Yunshu-AI-Workstation-1.2.1-Windows-x64.zip) |
-| 发布说明与校验文件 | [打开 v1.2.1 Release](https://github.com/JJames646/codex-portable/releases/tag/v1.2.1) |
-| 工作站及安装器源码 | [浏览源码](https://github.com/JJames646/codex-portable-workstation/tree/yunshu-v1.2.1) · [下载源码包](https://github.com/JJames646/codex-portable/releases/download/v1.2.1/Yunshu-AI-Workstation-1.2.1-Source.zip) |
-| 宣传视频 | [观看 / 下载 MP4](https://github.com/JJames646/codex-portable/releases/download/v1.2.1/Yunshu-AI-Workstation-Demo.mp4) |
-| 免费申请卡密、使用交流 | **QQ 群：713993476** |
+| Windows installer v1.2.1 | [Download the ZIP, extract it and run the EXE](https://github.com/JJames646/codex-portable/releases/download/v1.2.1/Yunshu-AI-Workstation-1.2.1-Windows-x64.zip) |
+| Release notes and checksums | [Open the v1.2.1 release](https://github.com/JJames646/codex-portable/releases/tag/v1.2.1) |
+| Workstation and installer source | [Browse the release source](https://github.com/JJames646/codex-portable-workstation/tree/yunshu-v1.2.1) · [Download the source archive](https://github.com/JJames646/codex-portable/releases/download/v1.2.1/Yunshu-AI-Workstation-1.2.1-Source.zip) |
+| Product video | [Watch / download the MP4](https://github.com/JJames646/codex-portable/releases/download/v1.2.1/Yunshu-AI-Workstation-Demo.mp4) |
+| Free activation code requests and community support | **QQ group: 713993476** |
 
-1. 下载并解压安装包，运行 `云枢AI便携工作站一键安装包-1.2.1.exe`。
-2. 选择本机、U 盘或移动固态上的可写目录，按安装向导完成安装。
-3. 首次启动等待初始化，使用在 QQ 群免费申请的工作站卡密激活。
-4. 按需配置模型服务和 API Key，再进入 Codex、Claude Code、OpenClaw、AI 对话或 AI 生图。
+1. Download and extract the archive, then run `云枢AI便携工作站一键安装包-1.2.1.exe`.
+2. Choose a writable folder on your computer, USB drive or portable SSD, and follow the installation wizard.
+3. Allow initialization to finish on first launch, then activate the workstation using the code requested for free in the QQ group.
+4. Configure your model service and API key as needed, then open Codex, Claude Code, OpenClaw, AI Chat or Image Generation.
 
-面向 Windows 10/11 x64，建议使用移动固态。模型调用需要网络；第三方引擎可能还有各自的登录和系统要求。本仓库不提供 macOS、Linux 或 Windows ARM 的成品安装包。
+The packaged application targets Windows 10/11 x64. A portable SSD is recommended. Model calls require an internet connection; third-party engines may have their own sign-in and system requirements. This repository does not provide packaged applications for macOS, Linux or Windows ARM.
 
-## 一个工作站，多个工作入口
+**Interface language:** The current application, screenshots and promotional video are in Simplified Chinese. The project README is available in English and Chinese.
 
-| 工作内容 | 已有能力 |
+## What You Can Do
+
+| Workflow | Available capabilities |
 | --- | --- |
-| AI 编程与自动化 | 集中配置并启动 Codex、Claude Code、OpenClaw |
-| AI 对话与图片创作 | 本地会话、独立模型服务配置、图片生成与结果管理 |
-| Skills 与插件 | 浏览资源、安装管理、切换目标引擎 |
-| 随身工作资料 | 项目、配置和可迁移数据随移动存储保存 |
-| 使用与维护 | 中文教程、工作站设置、安装向导 |
+| AI coding and automation | Configure and launch Codex, Claude Code and OpenClaw from one workspace |
+| Conversations and image creation | Local conversations, separate model service settings, image generation and result management |
+| Skills and plugins | Browse resources, manage installations and switch the target engine |
+| Portable project files | Keep projects, configuration and transferable data on your portable drive |
+| Setup and maintenance | Chinese tutorials, workstation settings and an installation wizard |
 
-### AI 对话
+### AI Chat
 
-![AI 对话真实界面](docs/images/chat.jpg)
+![AI Chat in the existing application](docs/images/chat.jpg)
 
-### Skills 与插件
+### Skills and Plugins
 
-| Skill 库 | 插件库 |
+| Skills library | Plugin library |
 | --- | --- |
-| ![Skill 库](docs/images/skills.jpg) | ![插件库](docs/images/plugins.jpg) |
+| ![Skills library](docs/images/skills.jpg) | ![Plugin library](docs/images/plugins.jpg) |
 
-## 产品演示
+## Product Video
 
-[![点击观看云枢 AI 工作站宣传视频](docs/images/demo-poster.jpg)](https://github.com/JJames646/codex-portable/releases/download/v1.2.1/Yunshu-AI-Workstation-Demo.mp4)
+[![Watch the Yunshu AI Workstation product video](docs/images/demo-poster.jpg)](https://github.com/JJames646/codex-portable/releases/download/v1.2.1/Yunshu-AI-Workstation-Demo.mp4)
 
-约 71 秒，1080p MP4。截图和视频展示已有产品，具体界面、可用模型和第三方资源以安装版本及服务配置为准。
+Approximately 71 seconds, 1080p MP4. The screenshots and video show the existing product. The interface, available models and third-party resources depend on the installed version and service configuration.
 
-## 版本与源码
+## Version and Source
 
-本次提供的安装包是 **2026 年 9 月 20 日构建的 v1.2.1**，工作站 Build ID 为 `9303dc9771b80694`。文件从现有安装包无损压缩，未修改 EXE、卡密机制或模型接入逻辑。
+This download is **v1.2.1, built on September 20, 2026**, with workstation Build ID `9303dc9771b80694`. The existing installer was losslessly wrapped in a ZIP archive. The EXE, activation mechanism and model integration behavior were not changed.
 
-- [版本核对与校验说明](docs/releases/v1.2.1.md)
-- [源码及构建说明](https://github.com/JJames646/codex-portable-workstation/blob/yunshu-v1.2.1/docs/BUILD_YUNSHU.md)
-- [开源范围与第三方说明](https://github.com/JJames646/codex-portable-workstation/blob/yunshu-v1.2.1/docs/OPEN_SOURCE.md)
+- [Version verification and checksums (Chinese)](docs/releases/v1.2.1.md)
+- [Source and build guide (Chinese)](https://github.com/JJames646/codex-portable-workstation/blob/yunshu-v1.2.1/docs/BUILD_YUNSHU.md)
+- [Open-source scope and third-party notices (Chinese)](https://github.com/JJames646/codex-portable-workstation/blob/yunshu-v1.2.1/docs/OPEN_SOURCE.md)
 
-这个仓库提供**成品下载、宣传资料和使用入口**；[`codex-portable-workstation`](https://github.com/JJames646/codex-portable-workstation) 提供**对应源码**。早期架构及原型文档保留在历史记录和原目录中，可能不代表当前成品状态。
+This repository provides **software downloads, product media and usage information**. The [`codex-portable-workstation`](https://github.com/JJames646/codex-portable-workstation) repository provides the **corresponding source code**. Early architecture and prototype documents remain in their original locations and in Git history; they may not describe the current application.
 
-## 反馈与联系
+## Feedback and Contact
 
-使用交流和免费申请工作站卡密：**QQ 群 713993476**。问题反馈也可以提交 [Issue](https://github.com/JJames646/codex-portable/issues)，请注明版本、操作步骤和错误提示，不要提交卡密、API Key 或个人会话数据。
+For community support and free workstation activation code requests, join **QQ group 713993476**. You can also report problems in [Issues](https://github.com/JJames646/codex-portable/issues). Include the version, steps to reproduce and error message; do not post activation codes, API keys or personal conversation data.
 
-云枢是独立项目。Codex、Claude Code、OpenClaw 及其他第三方名称和标识归相应权利人所有；本项目不代表相关厂商官方产品或背书。第三方软件与服务遵循各自条款。
+Yunshu is an independent project. Codex, Claude Code, OpenClaw and other third-party names and logos belong to their respective owners. This project is not an official product of, or endorsed by, those vendors. Third-party software and services are subject to their own terms.
